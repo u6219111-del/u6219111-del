@@ -1,338 +1,278 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Umar — Frontend Developer</title>
-<style>
-  :root{
-    --bg1:#0f1724;
-    --accent1:#6dd5ed;
-    --accent2:#1e3c72;
-    --glass: rgba(255,255,255,0.06);
-    --glass-border: rgba(255,255,255,0.1);
-    --glass-strong: rgba(255,255,255,0.08);
-    --glass-text: rgba(255,255,255,0.9);
-    --muted: rgba(255,255,255,0.65);
-    --radius:16px;
-    --shadow: 0 20px 40px rgba(2,6,23,0.6);
-    --glass-blur: 10px;
-  }
+  <meta charset="UTF-8">
+  <title>Umar (UMKA) — Frontend Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  *{box-sizing:border-box}
-  body{
-    margin:0;
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background: linear-gradient(135deg, var(--accent2), #081226 60%);
-    color:var(--glass-text);
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    padding:20px;
-  }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
 
-  /* Main container similar to your example's .game box */
-  .card {
-    width: 100%;
-    max-width: 1100px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-    border-radius: calc(var(--radius) + 4px);
-    box-shadow: var(--shadow);
-    display: grid;
-    grid-template-columns: 420px 1fr;
-    gap: 28px;
-    overflow: hidden;
-    border: 1px solid var(--glass-border);
-    padding: 26px;
-    position: relative;
-  }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 10px;
+      overflow-x: hidden;
+    }
 
-  /* Left column: profile */
-  .profile {
-    background: linear-gradient(180deg, rgba(109,213,237,0.03), rgba(17,24,39,0.03));
-    border-radius: 12px;
-    padding: 20px;
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-    align-items:center;
-    justify-content:flex-start;
-    min-height:360px;
-  }
+    /* ===== HEADER ===== */
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      animation: fadeIn 1.5s ease;
+    }
 
-  .photo {
-    width:150px;height:150px;border-radius:50%;
-    background: linear-gradient(135deg,var(--accent1),#4aa1e6);
-    display:flex;align-items:center;justify-content:center;
-    border:4px solid rgba(255,255,255,0.12);
-    box-shadow: 0 12px 30px rgba(13,38,58,0.6), 0 0 30px rgba(109,213,237,0.12);
-    overflow:hidden;
-    position:relative;
-    animation: float 4s ease-in-out infinite;
-  }
-  .photo img{width:100%;height:100%;object-fit:cover}
+    header h1 {
+      font-size: 34px;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #00f2fe, #4facfe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(79,172,254,0.5);
+    }
 
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    header p {
+      opacity: 0.9;
+      letter-spacing: 1px;
+    }
 
-  h1{margin:6px 0 0;font-size:22px;letter-spacing:0.6px}
-  .tag{font-weight:600;color:var(--muted);font-size:13px;margin-bottom:6px}
+    /* ===== CARDS ===== */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      width: 100%;
+      max-width: 1000px;
+      margin-bottom: 50px;
+    }
 
-  .badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-  .badge{
-    display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;
-    background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border:1px solid var(--glass-strong);
-    font-weight:600;font-size:13px;color:var(--glass-text);
-    transition:transform .22s ease, box-shadow .22s ease;
-  }
-  .badge:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(30,60,114,0.25)}
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      border: 1px solid rgba(255,255,255,0.15);
+      position: relative;
+      overflow: hidden;
+    }
 
-  .links{display:flex;flex-direction:column;gap:8px;width:100%;margin-top:8px}
-  .link{
-    display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;
-    text-decoration:none;color:var(--glass-text);font-weight:600;background:transparent;
-    border:1px solid rgba(255,255,255,0.03);
-    transition: all .18s ease;
-  }
-  .link:hover{background:linear-gradient(90deg, rgba(109,213,237,0.06), rgba(30,60,114,0.06));transform:translateY(-4px)}
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+      transform: translateX(-100%);
+      transition: 0.6s;
+    }
 
-  .contact{display:flex;flex-direction:column;gap:6px;align-items:center;margin-top:auto}
-  .contact a{color:var(--accent1);text-decoration:none;font-weight:700}
+    .card:hover::before {
+      transform: translateX(100%);
+    }
 
-  /* Right column: content + game */
-  .content{
-    padding:18px;
-    border-radius:12px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.04));
-    border:1px solid rgba(255,255,255,0.028);
-    display:flex;flex-direction:column;gap:12px;
-  }
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 25px 60px rgba(0,0,0,.6);
+    }
 
-  .title {
-    display:flex;align-items:center;gap:12px;
-  }
-  .title h2{margin:0;font-size:20px}
-  .subtitle{color:var(--muted);font-size:14px;margin-top:2px}
+    .card h2 {
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
 
-  .desc{
-    color:rgba(255,255,255,0.88);line-height:1.5;padding-right:8px;
-  }
+    .skills span {
+      display: inline-block;
+      margin: 6px 5px;
+      padding: 7px 14px;
+      border-radius: 20px;
+      background: linear-gradient(90deg, #00f2fe, #4facfe);
+      color: black;
+      font-size: 14px;
+      font-weight: bold;
+    }
 
-  /* game box like in your example but integrated */
-  .game-wrap{
-    margin-top:6px;
-    display:flex;
-    gap:18px;
-    align-items:flex-start;
-  }
+    .links a {
+      display: block;
+      margin: 10px 0;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-  .game {
-    width:420px;
-    height:250px;
-    background: linear-gradient(180deg, #ffffff, #f7f9fc);
-    border-radius:18px;
-    position:relative;
-    overflow:hidden;
-    box-shadow: 0 18px 40px rgba(2,6,23,0.35);
-    transform: translateZ(0);
-    border: 1px solid rgba(0,0,0,0.06);
-  }
+    .links a:hover {
+      transform: translateX(8px);
+      color: #00f2fe;
+    }
 
-  /* make game look modern with soft shadow and rounded shapes */
-  .player {
-    width:36px;height:36px;background: linear-gradient(180deg,var(--accent2),#06324a);
-    position:absolute;bottom:24px;left:48px;border-radius:10px;
-    box-shadow: 0 8px 18px rgba(30,60,114,0.3);
-    transition: bottom .12s ease;
-  }
+    /* ===== GAME ===== */
+    .game-box {
+      width: 360px;
+      height: 240px;
+      background: white;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,.5);
+      margin-bottom: 30px;
+    }
 
-  .star {
-    width:26px;height:26px;background:gold;position:absolute;top:30px;right:0;
-    clip-path: polygon(
-      50% 0%, 61% 35%, 98% 35%,
-      68% 57%, 79% 91%, 50% 70%,
-      21% 91%, 32% 57%, 2% 35%, 39% 35%
-    );
-    animation: move 2s linear infinite;
-    filter: drop-shadow(0 6px 8px rgba(0,0,0,0.18));
-  }
-  @keyframes move{from{right:-40px}to{right:460px}}
+    .player {
+      width: 28px;
+      height: 28px;
+      background: #2c5364;
+      position: absolute;
+      bottom: 20px;
+      left: 30px;
+      border-radius: 7px;
+    }
 
-  .score {
-    position:absolute;top:10px;left:12px;font-weight:800;color:#111;font-family:Inter,Arial;
-  }
+    .star {
+      width: 18px;
+      height: 18px;
+      background: gold;
+      position: absolute;
+      top: 30px;
+      right: 0;
+      clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%,
+        68% 57%, 79% 91%, 50% 70%,
+        21% 91%, 32% 57%, 2% 35%, 39% 35%
+      );
+      animation: move 1.8s linear infinite;
+    }@keyframes move {
+      from { right: -30px; }
+      to { right: 380px; }
+    }
 
-  /* small info panel next to the game */
-  .panel {
-    flex:1;
-    min-height:250px;
-    padding:14px;
-    border-radius:12px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(245,247,250,0.98));
-    box-shadow: 0 10px 30px rgba(2,6,23,0.06);
-    color:#0b2a3a;
-    display:flex;flex-direction:column;gap:10px;
-    justify-content:center;
-  }
-  .panel h3{margin:0;font-size:16px}
-  .panel p{margin:0;color:#23434f;line-height:1.45}
+    .score {
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      color: black;
+      font-weight: bold;
+      font-size: 14px;
+    }
 
-  /* footer line */
-  .foot {text-align:center;color:var(--muted);font-size:13px;margin-top:12px}
+    footer {
+      margin-top: 30px;
+      opacity: 0.7;
+      font-size: 14px;
+    }
 
-  /* responsive */
-  @media (max-width:980px){
-    .card{grid-template-columns:1fr;max-width:760px}
-    .game{width:100%;height:220px}
-    .photo{width:120px;height:120px}
-  }
-</style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
-<div class="card" role="region" aria-label="Umar profile card">
-  <!-- LEFT: profile -->
-  <div class="profile" aria-hidden="false">
-    <div class="photo" title="Umar photo">
-      <!-- replace src with your photo -->
-      <img src="https://avatars.dicebear.com/api/identicon/umar.svg" alt="Фото Умара">
-    </div>
-
+  <!-- ===== HEADER ===== -->
+  <header>
     <h1>Umar (U M K A) Sharshembiev</h1>
-    <div class="tag">Senior-ish Frontend • React • JS • UI/UX анимации</div>
+    <p>Frontend Developer — HTML, CSS, JavaScript, React</p>
+  </header>
 
-    <div class="badges" aria-hidden="true">
-      <div class="badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" /> JavaScript</div>
-      <div class="badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" /> React</div>
-      <div class="badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" /> Java</div>
-      <div class="badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="" /> Dart</div>
+  <!-- ===== CONTENT ===== -->
+  <div class="container">
+
+    <!-- ABOUT -->
+    <div class="card">
+      <h2>👤 Обо мне</h2>
+      <p>Я Frontend-разработчик, создаю современные сайты и веб-приложения. Работаю с HTML, CSS, JavaScript, React. Также знаю основы Java и Dart.</p>
     </div>
 
-    <div class="links" role="navigation" aria-label="Projects">
-      <a class="link" href="https://films-liard.vercel.app/" target="_blank" rel="noopener">
-        <!-- svg icon -->
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7H3z" stroke="#9be4ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Films App
-      </a>
-      <a class="link" href="https://portfolio-three-dusky-9kiuici1pk.vercel.app/" target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l7 4v6c0 5-3 9-7 11-4-2-7-6-7-11V6l7-4z" stroke="#9be4ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Portfolio
-      </a>
+    <!-- SKILLS -->
+    <div class="card">
+      <h2>🧰 Навыки</h2>
+      <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>React</span>
+        <span>Java</span>
+        <span>Dart</span>
+      </div>
     </div>
 
-    <div class="contact">
-      <div class="tag" style="margin-bottom:6px">Контакты</div>
-      <div><strong>Тел:</strong> <a href="tel:+996705414210">+996 705 414 210</a></div>
-      <div><strong>Telegram:</strong> <a href="https://t.me/programm_14" target="_blank">@programm_14</a></div>
-      <div><strong>Instagram:</strong> <a href="https://instagram.com/programm_14" target="_blank">@programm_14</a></div>
+    <!-- PROJECT -->
+    <div class="card">
+      <h2>🌌 Проекты</h2>
+      <p>Мои последние работы:</p>
+      <div class="links">
+        <a href="https://films-liard.vercel.app/" target="_blank">🎬 Films App</a>
+        <a href="https://portfolio-three-dusky-9kiuici1pk.vercel.app/" target="_blank">💼 Портфолио</a>
+      </div>
     </div>
+
+    <!-- CONTACTS -->
+    <div class="card">
+      <h2>📞 Контакты</h2>
+      <div class="links">
+        <a href="tel:+996705414210">📞 +996 705 414 210</a>
+        <a href="https://t.me/" target="_blank">💬 Telegram: @Умар</a>
+        <a href="https://instagram.com/programm_14" target="_blank">📷 Instagram: programm_14</a>
+      </div>
+    </div>
+
   </div>
 
-  <!-- RIGHT: content and game -->
-  <div class="content">
-    <div class="title">
-      <div style="flex:1">
-        <h2>Orion — навигатор в мире образования</h2>
-        <div class="subtitle">Мы помогаем школьникам Кыргызстана найти призвание, выбрать профессию и получить качественное образование.</div>
-      </div>
-    </div>
-
-    <p class="desc">
-      Я создаю интерфейсы с тонкой анимацией, аккуратной типографикой и продуманной архитектурой. В этом примере — компактный демонстрационный блок с мини-игрой (нажми пробел, чтобы прыгнуть и собирать звёзды).
-    </p>
-
-    <div class="game-wrap" aria-hidden="false">
-      <!-- game area (как в примере) -->
-      <div class="game" id="game" role="img" aria-label="Мини-игра: собирайте звёзды">
-        <div class="score">Score: <span id="score">0</span></div>
-        <div class="player" id="player" aria-hidden="false"></div>
-        <div class="star" id="star" aria-hidden="false"></div>
-      </div>
-
-      <!-- panel -->
-      <div class="panel">
-        <h3>Как играть</h3>
-        <p>Нажми <strong>ПРОБЕЛ</strong> чтобы прыгнуть. Собирай звёзды — каждый сбор увеличивает счёт на 1. Игра демонстрационная: можно встроить в лендинг или в портфолио.</p>
-
-        <h3 style="margin-top:12px">Особенности</h3>
-        <p>Чистый CSS для внешнего вида, плавные анимации, простая логика столкновений в JS — легко расширяется до полноценной мини-игры.</p>
-
-        <div style="margin-top:12px">
-          <a class="link" href="https://films-liard.vercel.app/" target="_blank">Открыть Films App</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="foot">© 2025 Umar — Frontend Developer · React, JS, Java, Dart</div>
+  <!-- ===== GAME ===== -->
+  <div class="game-box">
+    <div class="score">Score: <span id="score">0</span></div>
+    <div class="player" id="player"></div>
+    <div class="star" id="star"></div>
   </div>
-</div>
 
-<script>
-  // Игра: прыжок пробелом и сбор звёзд — по образцу, адаптирована к стилю
-  (function(){
-    const player = document.getElementById('player');
-    const star = document.getElementById('star');
-    const scoreEl = document.getElementById('score');
+  <footer>
+    © 2025 Umar (UMKA) — Frontend Developer
+  </footer>
 
+  <!-- ===== GAME SCRIPT ===== -->
+  <script>
+    const player = document.getElementById("player");
+    const star = document.getElementById("star");
+    const scoreEl = document.getElementById("score");
     let score = 0;
-    let jumping = false;
-    const groundBottom = 24; // px
-    const jumpBottom = 100; // px
-    const jumpDuration = 380; // ms
 
-    // Управление: пробел или кликом по игре
-    document.addEventListener('keydown', (e) => {
-      if (e.code === 'Space') doJump();
+    document.addEventListener("keydown", (e) => {
+      if (e.key === " ") {
+        player.style.bottom = "90px";
+        setTimeout(() => {
+          player.style.bottom = "20px";
+        }, 400);
+      }
     });
-    document.getElementById('game').addEventListener('click', doJump);
 
-    function doJump(){
-      if(jumping) return;
-      jumping = true;
-      player.style.bottom = jumpBottom + 'px';
-      setTimeout(()=> {
-        player.style.bottom = groundBottom + 'px';
-        setTimeout(()=> { jumping = false; }, 80);
-      }, jumpDuration);
-    }
+    setInterval(() => {
+      const playerRect = player.getBoundingClientRect();
+      const starRect = star.getBoundingClientRect();
 
-    // Коллизия с интервалом (как в примере)
-    setInterval(()=> {
-      const pRect = player.getBoundingClientRect();
-      const sRect = star.getBoundingClientRect();
-
-      const hit = (
-        pRect.x < sRect.x + sRect.width &&
-        pRect.x + pRect.width > sRect.x &&
-        pRect.y < sRect.y + sRect.height &&
-        pRect.y + pRect.height > sRect.y
-      );
-
-      if(hit){
+      if (
+        playerRect.x < starRect.x + starRect.width &&
+        playerRect.x + playerRect.width > starRect.x &&
+        playerRect.y < starRect.y + starRect.height &&
+        playerRect.y + playerRect.height > starRect.y
+      ) {
         score++;
         scoreEl.textContent = score;
-
-        // "рестарт" анимации звезды: сброс и перезапуск
-        star.style.animation = 'none';
-        // принудительный reflow
-        void star.offsetWidth;
-        // случайная скорость и задержка, чтобы было интереснее
-        const speed = (1.6 + Math.random()*1.2).toFixed(2) + 's';
-        star.style.animation = `move ${speed} linear infinite`;
+        star.style.animation = "none";
+        star.offsetHeight;
+        star.style.animation = "move 1.8s linear infinite";
       }
-    }, 60);
-
-    // Accessibility: ловим фокус и подсказку
-    // Сброс очков по двойному клику (на всякий)
-    document.getElementById('game').addEventListener('dblclick', ()=>{
-      score = 0;
-      scoreEl.textContent = score;
-    });
-  })();
-</script>
+    }, 50);
+  </script>
 
 </body>
 </html>
