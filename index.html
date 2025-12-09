@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Roma Game</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #1e3c72, #6dd5ed);
+      font-family: Arial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .game {
+      width: 400px;
+      height: 250px;
+      background: white;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .player {
+      width: 30px;
+      height: 30px;
+      background: #1e3c72;
+      position: absolute;
+      bottom: 20px;
+      left: 40px;
+      border-radius: 8px;
+    }
+
+    .star {
+      width: 20px;
+      height: 20px;
+      background: gold;
+      position: absolute;
+      top: 30px;
+      right: 0;
+      clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%,
+        68% 57%, 79% 91%, 50% 70%,
+        21% 91%, 32% 57%, 2% 35%, 39% 35%
+      );
+      animation: move 2s linear infinite;
+    }
+
+    @keyframes move {
+      from { right: -30px; }
+      to { right: 430px; }
+    }
+
+    .score {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="game">
+  <div class="score">Score: <span id="score">0</span></div>
+  <div class="player" id="player"></div>
+  <div class="star" id="star"></div>
+</div>
+
+<script>
+  const player = document.getElementById("player");
+  const star = document.getElementById("star");
+  const scoreEl = document.getElementById("score");
+  let score = 0;
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === " ") {
+      player.style.bottom = "80px";
+      setTimeout(() => {
+        player.style.bottom = "20px";
+      }, 400);
+    }
+  });
+
+  setInterval(() => {
+    const playerRect = player.getBoundingClientRect();
+    const starRect = star.getBoundingClientRect();
+
+    if (
+      playerRect.x < starRect.x + starRect.width &&
+      playerRect.x + playerRect.width > starRect.x &&
+      playerRect.y < starRect.y + starRect.height &&
+      playerRect.y + playerRect.height > starRect.y
+    ) {
+      score++;
+      scoreEl.textContent = score;
+      star.style.animation = "none";
+      star.offsetHeight;
+      star.style.animation = "move 2s linear infinite";
+    }
+  }, 50);
+</script>
+
+</body>
+</html>
