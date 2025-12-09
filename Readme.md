@@ -1,18 +1,17 @@
-# 👨‍💻 Ramzan (Roma) Abduladyev — Frontend Developer
+# 👨‍💻 Umar (U M K A) Sharshembiev — Frontend Developer
 
 ![Gradient](https://capsule-render.vercel.app/api?type=waving&color=0:1e3c72,100:6dd5ed&height=180&section=header&text=Frontend%20Developer&fontColor=ffffff&fontSize=40&animation=twinkling)
 
 ## 🚀 Обо мне
 Я Frontend-разработчик, создаю современные сайты и веб-приложения.  
 Работаю с HTML, CSS, JavaScript, React.  
-Также знаю основы Python, Java, Dart.
+Также знаю основы Java, Dart.
 
 ---
 
 ## 🧰 Навыки
 ![JS](https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=javascript)
 ![React](https://img.shields.io/badge/React-black?style=for-the-badge&logo=react)
-![Python](https://img.shields.io/badge/Python-black?style=for-the-badge&logo=python)
 ![Java](https://img.shields.io/badge/Java-black?style=for-the-badge&logo=java)
 
 ---
@@ -22,14 +21,16 @@ Orion — твой персональный навигатор в мире об�
 Мы помогаем школьникам Кыргызстана найти своё призвание, выбрать профессию и получить качественное образование.
 
 🔗 Сайт проекта:  
-👉 https://odezhda.vercel.app/
+- 🎬 **Films App** — https://films-liard.vercel.app/  
+- 💼 **Портфолио** — https://portfolio-three-dusky-9kiuici1pk.vercel.app/
 
 ---
 
 ## 📞 Контакты
-- 📱 Телефон: 0704122935  
-- 💬 Telegram: [@Roma_ejj](https://t.me/Roma_ejj)  
-- 📸 Instagram: [roma_08m](https://instagram.com/roma_08m)  
+- 📞 Телефон: **+996 705 414 210**  
+- 💬 Telegram: [@Умар](https://t.me/programm_14)  
+- 📷 Instagram: [@programm_14](https://instagram.com/programm_14)
+
 
 ---
 
@@ -40,7 +41,7 @@ Orion — твой персональный навигатор в мире об�
 ---
 
 ## ⭐ Статистика
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Roma-ejj&show_icons=true&theme=tokyonight)
+![GitHub Stats](https://portfolio-three-dusky-9kiuici1pk.vercel.app/)
 
 ---
 
