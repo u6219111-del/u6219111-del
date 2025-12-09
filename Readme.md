@@ -1,50 +1,103 @@
-# 👨‍💻 Umar (U M K A) Sharshembiev — Frontend Developer
+<!-- ========== TOP HEADER BANNER ========== -->
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&section=header&color=0:0f2027,50:203a43,100:2c5364&height=180&fontColor=ffffff&text=Umar%20(UMKA)%20Sharshembiev&fontSize=40&animation=twinkling"/>
+</p>
 
-![Gradient](https://capsule-render.vercel.app/api?type=waving&color=0:1e3c72,100:6dd5ed&height=180&section=header&text=Frontend%20Developer&fontColor=ffffff&fontSize=40&animation=twinkling)
+<h2 align="center">🚀 Frontend Developer • React • JavaScript • UI/UX</h2>
 
-## 🚀 Обо мне
-Я Frontend-разработчик, создаю современные сайты и веб-приложения.  
-Работаю с HTML, CSS, JavaScript, React.  
-Также знаю основы Java, Dart.
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com/?color=6dd5ed&size=24&center=true&vCenter=true&width=600&lines=Создаю+современные+интерфейсы;Люблю+анимации+и+гладкий+UI;Разрабатываю+приложения+на+React;Стремлюсь+к+Senior+уровню" />
+</p>
+
+---
+
+## ✨ О себе
+
+Меня зовут **Умар**, я — Frontend-разработчик, который создаёт:
+
+- 🔥 быстрые и отзывчивые веб-приложения  
+- 🎨 красивые интерфейсы с анимациями  
+- ⚛️ приложения на основе **React**  
+- 🧩 аккуратную архитектуру + чистый код  
+
+Работаю с **HTML, CSS, JavaScript, React**, также знаю основы **Java и Dart**.
 
 ---
 
 ## 🧰 Навыки
-![JS](https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=javascript)
-![React](https://img.shields.io/badge/React-black?style=for-the-badge&logo=react)
-![Java](https://img.shields.io/badge/Java-black?style=for-the-badge&logo=java)
+
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-0f2027?style=for-the-badge&logo=html5&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CSS3-203a43?style=for-the-badge&logo=css3&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JavaScript-2c5364?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
+  <img src="https://img.shields.io/badge/React-0f2027?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+  <img src="https://img.shields.io/badge/Java-203a43?style=for-the-badge&logo=java&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Dart-2c5364?style=for-the-badge&logo=dart&logoColor=white"/>
+</p>
 
 ---
 
-## 🌌 Проект Orion
-Orion — твой персональный навигатор в мире образования и карьеры.  
-Мы помогаем школьникам Кыргызстана найти своё призвание, выбрать профессию и получить качественное образование.
+## 🌌 Проект ORION
 
-🔗 Сайт проекта:  
-- 🎬 **Films App** — https://films-liard.vercel.app/  
-- 💼 **Портфолио** — https://portfolio-three-dusky-9kiuici1pk.vercel.app/
+> **Orion** — персональный навигатор школьников Кыргызстана  
+> в мире образования и карьеры.  
+> Помогает выбрать профессию, путь развития и открыть возможности будущего.
 
 ---
 
-## 📞 Контакты
-- 📞 Телефон: **+996 705 414 210**  
-- 💬 Telegram: [@Умар](https://t.me/programm_14)  
-- 📷 Instagram: [@programm_14](https://instagram.com/programm_14)
+## 🎯 Мои проекты
 
+| Проект | Описание | Ссылка |
+|--------|----------|--------|
+| 🎬 **Films App** | Онлайн каталог фильмов | https://films-liard.vercel.app/ |
+| 💼 **Портфолио сайт** | Персональный сайт | https://portfolio-three-dusky-9kiuici1pk.vercel.app/ |
 
 ---
 
 ## 🎮 Мини-игра
-👉 Мини-игра лежит в отдельном файле: game.html  
-Открой её через браузер или выложи через GitHub Pages.
+
+Мини-игра встроена **в отдельный файл `game.html`**  
+
+⚡ Открой её через браузер или через GitHub Pages.  
+(README не поддерживает JavaScript)
 
 ---
 
-## ⭐ Статистика
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Roma-ejj&show_icons=true&theme=tokyonight)
+## 📞 Контакты
+
+<p align="center">
+  <a href="tel:+996705414210"><img src="https://img.shields.io/badge/Телефон-0f2027?style=for-the-badge&logo=phone&logoColor=white"></a>
+  <a href="https://t.me/programm_14"><img src="https://img.shields.io/badge/Telegram-203a43?style=for-the-badge&logo=telegram&logoColor=white"></a>
+  <a href="https://instagram.com/programm_14"><img src="https://img.shields.io/badge/Instagram-2c5364?style=for-the-badge&logo=instagram&logoColor=white"></a>
+</p>
 
 ---
 
-## ✅ Статус
-🚧 Активно развиваюсь как Frontend-разработчик  
-🔥 Ищу команды, проекты, стажировки
+## 📊 GitHub Статистика
+
+<p align="center">
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=Roma-ejj&show_icons=true&theme=tokyonight&border_radius=10"/>
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Roma-ejj&layout=compact&theme=tokyonight&border_radius=10"/>
+</p>
+
+---
+
+## 🔥 Уровень профиля
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Level-Junior%20%2F%20Middle%20Growing-6dd5ed?style=for-the-badge&logo=rocket&logoColor=black"/>
+</p>
+
+---
+
+## 🎯 Статус
+
+- 🚧 Активно развиваюсь в Frontend  
+- 🔥 Изучаю архитектуру, анимации, продвинутый React  
+- ⚡ Ищу проекты, стажировки и единомышленников  
+
+---
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&section=footer&color=0:0f2027,100:2c5364&height=140"/>
+</p>
