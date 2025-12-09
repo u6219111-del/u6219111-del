@@ -41,7 +41,7 @@ Orion — твой персональный навигатор в мире об�
 ---
 
 ## ⭐ Статистика
-![GitHub Stats](https://portfolio-three-dusky-9kiuici1pk.vercel.app/)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Roma-ejj&show_icons=true&theme=tokyonight)
 
 ---
 

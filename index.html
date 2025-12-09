@@ -1,108 +1,219 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Roma Game</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umar (UMKA) — Frontend Developer</title>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
     body {
-      margin: 0;
-      background: linear-gradient(135deg, #1e3c72, #6dd5ed);
-      font-family: Arial;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: radial-gradient(circle at top, #1e3c72, #0a0f24 70%);
+        color: white;
+        overflow-x: hidden;
     }
 
-    .game {
-      width: 400px;
-      height: 250px;
-      background: white;
-      border-radius: 20px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    /* ===== HEADER ===== */
+    .hero {
+        padding: 80px 20px 120px;
+        text-align: center;
+        position: relative;
     }
 
-    .player {
-      width: 30px;
-      height: 30px;
-      background: #1e3c72;
-      position: absolute;
-      bottom: 20px;
-      left: 40px;
-      border-radius: 8px;
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: -80px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1200px;
+        height: 1200px;
+        background: radial-gradient(circle, rgba(109,213,237,0.18), transparent 70%);
+        filter: blur(70px);
+        z-index: -1;
     }
 
-    .star {
-      width: 20px;
-      height: 20px;
-      background: gold;
-      position: absolute;
-      top: 30px;
-      right: 0;
-      clip-path: polygon(
-        50% 0%, 61% 35%, 98% 35%,
-        68% 57%, 79% 91%, 50% 70%,
-        21% 91%, 32% 57%, 2% 35%, 39% 35%
-      );
-      animation: move 2s linear infinite;
+    .photo {
+        width: 170px;
+        height: 170px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        border: 4px solid rgba(255,255,255,0.4);
+        background: url('https://cdn-icons-png.flaticon.com/512/149/149071.png') center/cover;
+        box-shadow: 0 0 25px rgba(109, 213, 237, 0.7),
+                    0 0 60px rgba(30, 60, 114, 0.6);
+        animation: float 4s ease-in-out infinite;
     }
 
-    @keyframes move {
-      from { right: -30px; }
-      to { right: 430px; }
+    @keyframes float {
+        0%,100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
     }
 
-    .score {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      font-weight: bold;
+    h1 {
+        font-size: 46px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        background: linear-gradient(90deg, #6dd5ed, #2193b0);
+        -webkit-background-clip: text;
+        color: transparent;
     }
-  </style>
+
+    h2 {
+        font-size: 22px;
+        opacity: 0.8;
+        margin-bottom: 35px;
+    }
+
+    /* ===== CARD ===== */
+    .card {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 30px;
+        border-radius: 22px;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.12);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 0 25px rgba(109, 213, 237, 0.08);
+        animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== SKILLS ===== */
+    .skills {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin: 20px 0;
+    }
+
+    .skill {
+        padding: 10px 20px;
+        border-radius: 50px;
+        background: linear-gradient(135deg, rgba(109,213,237,0.25), rgba(33,147,176,0.25));
+        border: 1px solid rgba(255,255,255,0.18);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        backdrop-filter: blur(5px);
+        transition: 0.3s;
+    }
+    .skill:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 0 18px rgba(109,213,237,0.4);
+    }
+
+    /* ICON STYLE */
+    .skill img {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* ===== CONTACTS ===== */
+    .contacts a {
+        color: #6dd5ed;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .contacts a:hover {
+        color: #ffffff;
+        text-shadow: 0 0 10px #6dd5ed;
+    }
+
+    /* PROJECT LINKS */
+    .projects a {
+        color: #9be4ff;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+    .projects a:hover {
+        color: #fff;
+        text-shadow: 0 0 10px #6dd5ed;
+    }
+
+    /* FOOTER */
+    footer {
+        text-align: center;
+        padding: 40px;
+        opacity: 0.7;
+    }
+</style>
 </head>
+
 <body>
 
-<div class="game">
-  <div class="score">Score: <span id="score">0</span></div>
-  <div class="player" id="player"></div>
-  <div class="star" id="star"></div>
+<!-- HERO -->
+<section class="hero">
+    <div class="photo"></div>
+
+    <h1>Umar (U M K A) Sharshembiev</h1>
+    <h2>Senior-Level Frontend Developer • React • JavaScript • UI Animations</h2>
+</section>
+
+<!-- CARD -->
+<div class="card">
+
+    <h2>🚀 Обо мне</h2>
+    <p>
+        Я — Frontend разработчик, создающий современные, визуально мощные и технологичные веб-интерфейсы.
+        Специализируюсь на React, анимациях, UI-эффектах, адаптивных интерфейсах и высоком уровне UX.
+        Применяю подходы уровня senior: Clean Code, архитектура, оптимизация рендера, анимации без потерь FPS.
+    </p>
+
+    <hr style="border: none; height: 1px; background: rgba(255,255,255,0.15); margin: 25px 0;">
+
+    <h2>🧰 Технологический стек</h2>
+
+    <div class="skills">
+        <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"> JavaScript</div>
+        <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"> React</div>
+        <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"> Java</div>
+        <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"> Dart</div>
+        <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"> HTML</div>
+        <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"> CSS</div>
+    </div>
+
+    <hr style="border: none; height: 1px; background: rgba(255,255,255,0.15); margin: 25px 0;">
+
+    <h2>🌌 Проект Orion</h2>
+    <p>
+        <strong>Orion</strong> — персональный образовательный навигатор школьников Кыргызстана.  
+        Помогает выбрать профессию, пройти путь развития, найти возможности и построить уверенное будущее.
+    </p>
+
+    <div class="projects">
+        <p>Мои работы:</p>
+        <ul>
+            <li>🎬 <a href="https://films-liard.vercel.app/" target="_blank">Films App</a></li>
+            <li>💼 <a href="https://portfolio-three-dusky-9kiuici1pk.vercel.app/" target="_blank">Портфолио</a></li>
+        </ul>
+    </div>
+
+    <hr style="border: none; height: 1px; background: rgba(255,255,255,0.15); margin: 25px 0;">
+
+    <h2>📞 Контакты</h2>
+    <div class="contacts">
+        <p>📞 Телефон: <a href="tel:+996705414210">+996 705 414 210</a></p>
+        <p>💬 Telegram: <a href="https://t.me/programm_14" target="_blank">@programm_14</a></p>
+        <p>📷 Instagram: <a href="https://instagram.com/programm_14" target="_blank">@programm_14</a></p>
+    </div>
+
 </div>
 
-<script>
-  const player = document.getElementById("player");
-  const star = document.getElementById("star");
-  const scoreEl = document.getElementById("score");
-  let score = 0;
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === " ") {
-      player.style.bottom = "80px";
-      setTimeout(() => {
-        player.style.bottom = "20px";
-      }, 400);
-    }
-  });
-
-  setInterval(() => {
-    const playerRect = player.getBoundingClientRect();
-    const starRect = star.getBoundingClientRect();
-
-    if (
-      playerRect.x < starRect.x + starRect.width &&
-      playerRect.x + playerRect.width > starRect.x &&
-      playerRect.y < starRect.y + starRect.height &&
-      playerRect.y + playerRect.height > starRect.y
-    ) {
-      score++;
-      scoreEl.textContent = score;
-      star.style.animation = "none";
-      star.offsetHeight;
-      star.style.animation = "move 2s linear infinite";
-    }
-  }, 50);
-</script>
+<footer>
+    © 2025 — Developed by Umar (UMKA). Стремлюсь к уровню Lead Frontend.
+</footer>
 
 </body>
 </html>
