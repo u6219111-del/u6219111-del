@@ -3,7 +3,7 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&section=header&color=0:0f2027,50:203a43,100:2c5364&height=180&fontColor=ffffff&text=Umar%20(UMKA)%20Sharshembiev&fontSize=40&animation=twinkling"/>
 </p>
 
-<h2 align="center">🚀 Senior-Minded Frontend Developer • React • JavaScript • UI/UX</h2>
+<h2 align="center">🚀 Junior Frontend Developer • React • JavaScript • UI/UX</h2>
 
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com/?color=6dd5ed&size=24&center=true&vCenter=true&width=700&lines=Создаю+интуитивные+и+динамичные+интерфейсы;Разрабатываю+масштабируемые+React+приложения;Делаю+UI+красивым,+гладким+и+анимированным;Стремлюсь+к+Senior+уровню" />
@@ -69,7 +69,7 @@
 ## 🔥 Позиционирование
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Level-Junior%2FMiddle→Senior%20in%20Progress-6dd5ed?style=for-the-badge&logo=rocket&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Level-Junior%2F%20in%20Progress-6dd5ed?style=for-the-badge&logo=rocket&logoColor=black"/>
 </p>
 
 - 🚀 Фокус на **React, анимации, продвинутую архитектуру приложений**  
